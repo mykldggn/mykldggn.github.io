@@ -8,7 +8,7 @@
 - GPA: 3.6
 - Dean's List
 - IFC Standards Board Justice (2023)
-- Sigma Nu
+- Sigma Nu Executive Board (2023)
 
 ### MS: Information Systems, University of Washington (2024-)
 - GPA: 3.7
