@@ -1,4 +1,6 @@
-# Currently: Enrolled studying MS in Information Systems at the University of Washington.
+# Currently: Looking for Work in the Seattle Metro Area!
+
+## Pursuing a career in either Data Science or AIML Engineering. 
 
 ### Education
 
