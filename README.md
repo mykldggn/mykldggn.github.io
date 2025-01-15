@@ -14,8 +14,8 @@
 ### MS: Information Systems, University of Washington 
 - (_June 2024 - June 2025_)
 - GPA: 3.7
-- MSIS course structure  applies Computer Science and Machine Learning concepts to meet Business Applications
-- Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts
+- MSIS course structure  applies Computer Science and Machine Learning concepts to meet Business Applications.
+- Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts.
 - Expected Graduation: Early June 2025
 - Focus on Data Science and AIML.
 
@@ -45,6 +45,6 @@
 - m
 
 ### DFL Pokal Computer Vision Project
-- 
+![Example Output](/assets/img/voronoi.png)
 - Project notebooks allow for projections and Voronoi Diagram Analysis of sample game footage.
 - Cleaned and formatted CV Dataset provided by Roboflow via their CV Project from the DFL Kaggle dataset.
