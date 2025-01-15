@@ -18,3 +18,5 @@
 ### ScalarField: LLM Development Intern (2024-)
 - Helped model formula to convert Greeks for options pricing data.
 - Utilized Live API data to seamlessly integrate real-time iterations.
+
+## Projects
