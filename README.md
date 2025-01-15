@@ -20,3 +20,16 @@
 - Utilized Live API data to seamlessly integrate real-time iterations.
 
 ## Projects
+### EPL Player Live Shot Chart
+![Example Output](/assets/img/miscsalahoutput25.png)
+- Notebook that allows user to enter related player ID and see career or per-season shot charts & statistics through live web scraping of understat.com.
+
+### Presidental Election PV Prediction Model
+- ML Gradient Boosting Classifier Model that uses nationwide polling to gauge sentiment and predict the likelihood of each candidate winning the popular vote.
+- 
+
+### Solana Trading Bot
+
+### Solana BOT
+
+### Solana BOT
