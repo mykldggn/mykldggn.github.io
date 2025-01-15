@@ -25,26 +25,29 @@
 - Utilized Live API data to seamlessly integrate real-time iterations.
 
 ## Projects
-### EPL Player Live Shot Chart
+### [EPL Player Live Shot Chart](https://github.com/mykldggn/EPLPlayerShotChart)
 ![Example Output](/assets/img/miscsalahoutput25.png)
 - Notebook that allows user to enter related player ID and see career or per-season shot charts & statistics through live web scraping of understat.com.
 - Gives visualization of live game data.
 - Graphics inspired by visualizations from The Athletic.
 
-### Presidental Election PV Prediction Model
+### [Presidental Election PV Prediction Model](https://github.com/mykldggn/ElectionPredictionModel)
 - ML Gradient Boosting Classifier Model that uses nationwide polling to gauge sentiment and predict the likelihood of each candidate winning the popular vote.
-- 
+- Has live data scraping and acquisition before initial data processing for gradient boosting classifier.
+- Model runs simulations based on data for election outcome.
+- Results are exported to basic UI for end visualization.
 
-### Solana Trading Bot
-- m
-- m
+### [Solana Trading Bot](https://github.com/mykldggn/SolanaBOT)
+- Shell code for a Solana Memecoin Bot, assuming the user has access to the paid API chosen as well as a Telegram copytrading bot.
+- Integrates multiple API for various levels for token validation before the execution from the bot. 
+- Requires user customization and personal risk tolerance adjustments before implementation.
+- Still WIP :)
 
-### Solana BOT
-- m
-- m
-- m
+### [BTC Price Predictor](https://github.com/mykldggn/BTCPricePredictor)
+- Bitcoin price predictor that webscrapes and gauges live sentiment online before using xgboost models to predict whether or not the price will increase from that point by EOD next day.
+- Backtesting protocols implemented for precision improvements.
 
-### DFL Pokal Computer Vision Project
+### [DFL Pokal Computer Vision Project](https://github.com/mykldggn/SoccerCVProj1)
 ![Example Output](/assets/img/voronoi.png)
 - Project notebooks allow for projections and Voronoi Diagram Analysis of sample game footage.
 - Cleaned and formatted CV Dataset provided by Roboflow via their CV Project from the DFL Kaggle dataset.
