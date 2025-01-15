@@ -51,6 +51,7 @@
 ![Example Project](/assets/img/SNPcosmo.png)
 - S&P500 visualization using Kaggle API of its current listings, clustered by the market sector associated with all 500 stocks.
 - The visualization groups companies by their respective sectors, displaying them in distinct, non-overlapping clusters arranged in a circular layout.
+- Produces GPU visualization that shows animated clusters with interactive labeling.
 
 ### [DFL Pokal Computer Vision Project](https://github.com/mykldggn/SoccerCVProj1)
 ![Example Output](/assets/img/voronoi.png)
