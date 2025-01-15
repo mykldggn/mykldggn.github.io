@@ -56,4 +56,5 @@
 ### [DFL Pokal Computer Vision Project](https://github.com/mykldggn/SoccerCVProj1)
 ![Example Output](/assets/img/voronoi.png)
 - Project notebooks allow for projections and Voronoi Diagram Analysis of sample game footage.
+- Project Covers: Object Detection, Homography Fundamentals, K-Means Clustering
 - Cleaned and formatted CV Dataset provided by Roboflow via their CV Project from the DFL Kaggle dataset.
