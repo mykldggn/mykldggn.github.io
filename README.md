@@ -1,6 +1,6 @@
 # Currently: Looking for Work in the Seattle Metro Area!
 
-## Pursuing a career in either Data Science or as an AI/ML Engineer. 
+## Pursuing a career as either a Data Scientist or an AI/ML Engineer. 
 
 ## Education
 
