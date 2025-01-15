@@ -3,3 +3,9 @@ logo: assets/img/snoopy.png
 description: ML | University of Washington
 show_downloads: true
 theme: jekyll-theme-minimal
+
+social:
+  - name: LinkedIn
+    url: https://linkedin.com/in/miklduggan
+  - name: GitHub
+    url: https://github.com/mykldggn
