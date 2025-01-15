@@ -4,13 +4,15 @@
 
 ## Education
 
-### BBA: Information Systems, University of Washington (_2020 - 2024_)
+### BBA: Information Systems, University of Washington
+- (_2020 - 2024_)
 - GPA: 3.6
 - Dean's List
 - IFC Standards Board Justice (_2023_)
 - Sigma Nu Executive Board (_2023_)
 
-### MS: Information Systems, University of Washington (_June 2024 - June 2025_)
+### MS: Information Systems, University of Washington 
+- (_June 2024 - June 2025_)
 - GPA: 3.7
 - MSIS course structure  applies Computer Science and Machine Learning concepts to meet Business Applications
 - Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts
