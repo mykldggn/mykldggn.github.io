@@ -49,7 +49,7 @@
 - Bitcoin price predictor that webscrapes and gauges live sentiment online before using xgboost models to predict whether or not the price will increase from that point by EOD next day.
 - Backtesting protocols implemented for precision improvements.
 
-### [S&P500 Cosmograph Visualiztion](https://github.com/mykldggn/S-P500_Cosmograph)
+### [S&P500 Cosmograph Visualization](https://github.com/mykldggn/S-P500_Cosmograph)
 ![Example Project](/assets/img/SNPcosmo.png)
 - S&P500 visualization using Kaggle API of its current listings, clustered by the market sector associated with all 500 stocks.
 - The visualization groups companies by their respective sectors, displaying them in distinct, non-overlapping clusters arranged in a circular layout.
