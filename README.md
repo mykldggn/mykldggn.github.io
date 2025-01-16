@@ -1,6 +1,6 @@
-# Currently: Looking for Work in the Seattle Metro Area!
-Open to opportunities in the Bay Area or NYC as well.
-
+# Portfolio
+## Currently: Looking for Work in the Seattle Metro Area!
+## Open to opportunities in the Bay Area or NYC as well.
 ## Pursuing a career as either a Data Scientist or an AI/ML Engineer. 
 
 ## Education
