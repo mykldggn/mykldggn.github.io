@@ -14,7 +14,7 @@
 - Sigma Nu Executive Board (_2023_)
 
 ### MS: Information Systems, University of Washington 
-- (_June 2024 - June 2025_)
+- IP: (_June 2024 - June 2025_)
 - GPA: 3.7
 - MSIS course structure  applies Computer Science and Machine Learning concepts to meet Business Applications.
 - Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts.
