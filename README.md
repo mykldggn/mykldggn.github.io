@@ -18,8 +18,6 @@
 - GPA: 3.7
 - MSIS course structure  applies Computer Science and Machine Learning concepts to meet Business Applications.
 - Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts.
-- Expected Graduation: Early June 2025
-- Focus on Data Science and AIML.
 
 ## Experience
 ### ScalarField: LLM Development Intern (_Oct 2024-_)
