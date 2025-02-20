@@ -31,6 +31,13 @@
 - Gives visualization of live game data.
 - Graphics inspired by visualizations from The Athletic.
 
+### [Credit Card Fraud Deep Learning Predictor](https://github.com/mykldggn/XXXXX)
+![Classifier CV Comp](/assets/img/AUC.png)
+- Notebook that allows user to analyze the Kaggle Credit Card Fraud dataset.
+- The dataset is highly unbalanced, so the notebook compares different classifiers for an Undersampled vs. Oversampled (SMOTE) Neural Network.
+- Outcomes are juxtaposed to see what method is best for dealing with a dataset under these circumstances.
+- Model evaluated using F1 Score and Accuracy for a contextual analysis
+
 ### [Presidental Election PV Prediction Model](https://github.com/mykldggn/ElectionPredictionModel)
 - ML Gradient Boosting Classifier Model that uses nationwide polling to gauge sentiment and predict the likelihood of each candidate winning the popular vote.
 - Has live data scraping and acquisition before initial data processing for gradient boosting classifier.
