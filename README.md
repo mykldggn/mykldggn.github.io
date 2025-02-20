@@ -31,7 +31,7 @@
 - Gives visualization of live game data.
 - Graphics inspired by visualizations from The Athletic.
 
-### [Credit Card Fraud Deep Learning Predictor](https://github.com/mykldggn/XXXXX)
+### [Credit Card Fraud Deep Learning Predictor](https://github.com/mykldggn/CreditCardNN)
 ![Classifier CV Comp](/assets/img/AUC.png)
 - Notebook that allows user to analyze the Kaggle Credit Card Fraud dataset.
 - The dataset is highly unbalanced, so the notebook compares different classifiers for an Undersampled vs. Oversampled (SMOTE) Neural Network.
