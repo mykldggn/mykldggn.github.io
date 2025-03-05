@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --very-light-blue: #f0f7ff;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --dark-gray: #1e293b;
+            --text-gray: #475569;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 22px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 35px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 120px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 25px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: var(--light-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .about:after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: var(--light-gray);
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--secondary-blue);
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .education-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .education-date {
+            color: var(--text-gray);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: inline-block;
+            background-color: var(--light-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .education-title {
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--dark-gray);
+        }
+
+        .education-card ul {
+            list-style-position: outside;
+            margin-left: 20px;
+        }
+
+        .education-card li {
+            margin-bottom: 12px;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 5px;
+        }
+
+        .education-card li::marker {
+            color: var(--primary-blue);
+        }
+
+        .skills {
+            padding: 100px 0;
+            background-color: var(--very-light-blue);
+            position: relative;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .skill-card {
+            background-color: var(--white);
+            padding: 35px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            width: 330px;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+        }
+
+        .skill-card h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .skill-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+
+        .skill-card ul {
+            list-style-type: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .skill-card li {
+            margin-bottom: 12px;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .skill-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--light-gray);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 30px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info p:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-info p:before {
+            position: absolute;
+            left: 0;
+            font-family: sans-serif;
+            color: var(--primary-blue);
+        }
+
+        .contact-info p:nth-child(1):before {
+            content: '✉';
+        }
+
+        .contact-info p:nth-child(2):before {
+            content: '☎';
+        }
+
+        .contact-info p:nth-child(3):before {
+            content: '⌖';
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 50px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.15);
+            min-width: 120px;
+        }
+
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .footer-text {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .social-links a {
+                margin: 0 10px;
+                font-size: 18px;
+                width: 40px;
+                height: 40px;
+                line-height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Michael Duggan</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="content.html">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <h1>Welcome to My Portfolio!</h1>
+            <p>I'm a Graduate Student at the University of Washington pursuing a career as a Data Scientist or ML Engineer.</p>
+            <a href="content.html" class="cta-button">View My ML Projects</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Graduate Student and motivated leader who has been successful in driving team collaboration, fostering innovation, and achieving results in dynamic and challenging environments throughout my time at the University of Washington. I am currently seeking a career as a Data Scientist or ML Engineer in the Greater Seattle Area.</p>
+                </div>
+                <div class="about-image">
+                    <img src="portrait.jpeg" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="about">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-content">
+                <div class="education-card">
+                    <h3>University of Washington | Seattle, WA</h3>
+                    <p class="education-date">June 2024 - May 2025</p>
+                    <p class="education-title">Currently Pursuing a Masters of Science in Information Systems</p>
+                    <ul>
+                        <li>MSIS course structure applies Computer Science and Machine Learning concepts to meet Business Applications</li>
+                        <li>Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts</li>
+                    </ul>
+                </div>
+
+                <div class="education-card">
+                    <h3>University of Washington | Seattle, WA</h3>
+                    <p class="education-date">October 2020 - March 2024</p>
+                    <p class="education-title">Foster School of Business | B.A. in Information Systems</p>
+                    <ul>
+                        <li>GPA 3.6 | Dean's List Honors | Sigma Nu Executive Board (2023)</li>
+                        <li>Completed topics on: Cybersecurity, Finance, Python For Business & Data, Database Management, & Data Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="about">
+        <div class="container">
+            <h2 class="section-title">Work & Leadership Experience</h2>
+            <div class="education-content">
+                <div class="education-card">
+                    <h3>LLM Development Intern (SWE Intern)</h3>
+                    <p class="education-date">October 2024 - Present</p>
+                    <p class="education-title">ScalarField | Seattle, WA | scalarfield.io</p>
+                    <ul>
+                        <li>Helped and optimize backend for a financial language model (LLM), facilitating the processing and analysis of securities data.</li>
+                        <li>Created Python-based scripts to compute financial Greeks (Delta, Gamma, Theta, etc.) from local datasets.</li>
+                    </ul>
+                </div>
+
+                <div class="education-card">
+                    <h3>Assistant Manager</h3>
+                    <p class="education-date">July 2022 - Present</p>
+                    <p class="education-title">Delfino's Chicago Deep Dish Pizzeria | Seattle, WA</p>
+                    <ul>
+                        <li>Manage front of house IT to help fix network and process outages</li>
+                        <li>Manage and delegate tasks to 3-4 workers as shift lead when needed</li>
+                        <li>Engage in customer service opportunities & issues through all facets of the role</li>
+                    </ul>
+                </div>
+
+                <div class="education-card">
+                    <h3>IFC Standards Board Justice</h3>
+                    <p class="education-date">January 2023 - November 2023</p>
+                    <p class="education-title">University of Washington IFC | Seattle, WA</p>
+                    <ul>
+                        <li>Issued rulings as one of nine students at the University of Washington elected to oversee the disciplinary issues surrounding the entire Greek system of around 5,000+ members.</li>
+                        <li>Served as a representative to the University of Washington & Interfraternity Council.</li>
+                        <li>Advocated internally for changes to improve hazing and misconduct reporting.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>mySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>RStudio</li>
+                        <li>Tableau</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Libraries</h3>
+                    <ul>
+                        <li>NumPy</li>
+                        <li>Pandas</li>
+                        <li>Tensorflow</li>
+                        <li>Keras</li>
+                        <li>Matplotlib</li>
+                        <li>Scikit-Learn</li>
+                        <li>Seaborn</li>
+                        <li>BeautifulSoup</li>
+                        <li>Scrapy</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>Microsoft Azure</li>
+                        <li>Amazon AWS Ecosystems</li>
+                        <li>Snowflake</li>
+                        <li>Microsoft Office Products</li>
+                        <li>DataQuest [Python & Data Visualization]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Email: michaelduggan415@gmail.com</p>
+                    <p>Phone: (415) 816-2933</p>
+                    <p>Location: Seattle, WA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/miklduggan" target="_blank">LinkedIn</a>
+                <a href="https://mykldggn.github.io" target="_blank">GitHub</a>
+            </div>
+            <p class="footer-text">&copy; 2025 Michael Duggan. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
