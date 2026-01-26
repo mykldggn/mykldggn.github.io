@@ -466,349 +466,520 @@
         </div>
     </header>
 
-    <!-- Projects Section -->
-    <section class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" onclick="openModal('project1Modal')">
-                    <img src="EPLBG.png" alt="EPL Player Live Shot Chart" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">EPL Player Live Shot Chart</h3>
-                        <p class="project-description">Notebook uses BeautifulSoup for live HTML web scraping of
-                            understat.com's English Premier League database. Pulls relevant data based on user inputs,
-                            cleans and transforms into relational databases.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">BeautifulSoup</span>
-                            <span class="tag">Pyplot</span>
-                            <span class="tag">Web Scraping</span>
-                        </div>
-                    </div>
-                </div>
+ <!-- ================= PROJECTS SECTION ================= -->
+<section class="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
 
-                <!-- Project 2 -->
-                <div class="project-card" onclick="openModal('project2Modal')">
-                    <img src="BTCBG.jpeg" alt="Security Price Predictors" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Security Price Predictors</h3>
-                        <p class="project-description">Built sentiment models for both S&P 500 as well as nontraditional
-                            securities such as Bitcoin. Live scrapes data for sentiment analysis to use to gauge price
-                            prediction and market trends.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Sentiment Analysis</span>
-                            <span class="tag">Financial Modeling</span>
-                            <span class="tag">Web Scraping</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="projects-grid">
 
-                <!-- Project 3 -->
-                <div class="project-card" onclick="openModal('project3Modal')">
-                    <img src="PVBG.jpeg" alt="US Election Popular Vote Predictor" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">US Election Popular Vote Predictor</h3>
-                        <p class="project-description">Built model that scrapes US election data for national polling.
-                            Predictor runs a ML model that aggregates data and makes predictions for the election
-                            outcome.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Data Aggregation</span>
-                            <span class="tag">UI Development</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" onclick="openModal('project4Modal')">
-                    <img src="CVBG.png" alt="Soccer Computer Vision Project" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Soccer Computer Vision Project</h3>
-                        <p class="project-description">Based on DFB-Pokal game data from Roboflow, Utilizes Roboflow/HF
-                            API. Project Covers: Object Detection, Homography Fundamentals, K-Means Clustering.</p>
-                        <div class="project-tags">
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">Object Detection</span>
-                            <span class="tag">K-Means Clustering</span>
-                            <span class="tag">Voronoi Diagram</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" onclick="openModal('project5Modal')">
-                    <img src="SOLBG.png" alt="Solana Trading Bot" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Solana Trading Bot</h3>
-                        <p class="project-description">Bot shell code uses web scraping of gmgn.ai to snipe prospective
-                            tokens based on user preferences and risk tolerance. Public code is purposely open-ended for
-                            personal customization.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Web Scraping</span>
-                            <span class="tag">API Integration</span>
-                            <span class="tag">Cryptocurrency</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card" onclick="openModal('project6Modal')">
-                    <img src="CCBG.jpeg" alt="Credit Card Fraud Deep Learning Neural Network"
-                        class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Credit Card Fraud Deep Learning Neural Network</h3>
-                        <p class="project-description">Notebook analyzing a highly unbalanced Kaggle Credit Card Fraud
-                            dataset. Notebook compares different classifiers for an Undersampled vs. an Oversampled
-                            (SMOTE) Neural Network.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Keras</span>
-                            <span class="tag">Tensorflow</span>
-                            <span class="tag">SMOTE</span>
-                            <span class="tag">Neural Networks</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7 (NEW) - Kitchen AI Assistant -->
-                <div class="project-card" onclick="openModal('project7Modal')">
-                    <img src="KAI.jpg" alt="Kitchen AI Assistant" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Kitchen AI Assistant</h3>
-                        <p class="project-description">An AI-powered kitchen assistant that helps with recipe recommendations, 
-                            ingredient substitutions, and cooking techniques based on what you have available.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">NLP</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">API Integration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8 (NEW) - Salesforce CRM Pipeline -->
-                <div class="project-card" onclick="openModal('project8Modal')">
-                    <img src="sales.png" alt="Salesforce CRM Pipeline" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Salesforce CRM Pipeline</h3>
-                        <p class="project-description">Designed and deployed an end-to-end CRM analytics dashboard, reducing stakeholder ad-hoc Excel work.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Salesforce API</span>
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">Automation</span>
-                        </div>
+            <!-- Project 1 -->
+            <div class="project-card" onclick="openModal('project1Modal')">
+                <img src="EPLBG.png" alt="EPL Player Live Shot Chart" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">EPL Player Live Shot Chart</h3>
+                    <p class="project-description">
+                        Live EPL shot-map visualization built from real-time web scraping.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag">matplotlib</span>
+                        <span class="tag">Web Scraping</span>
                     </div>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="index.html" class="back-button">Back to Home</a>
+            <!-- Project 2 -->
+            <div class="project-card" onclick="openModal('project2Modal')">
+                <img src="BTCBG.jpeg" alt="Security Price Predictors" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Security Price Predictors</h3>
+                    <p class="project-description">
+                        Sentiment-driven market prediction for equities and crypto assets.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Financial Modeling</span>
+                        <span class="tag">Backtesting</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" onclick="openModal('project3Modal')">
+                <img src="PVBG.jpeg" alt="US Election Popular Vote Predictor" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">US Election Popular Vote Predictor</h3>
+                    <p class="project-description">
+                        Probabilistic aggregation of national polling data with live UI output.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Polling Data</span>
+                        <span class="tag">UI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" onclick="openModal('project4Modal')">
+                <img src="CVBG.png" alt="Soccer Computer Vision Project" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Soccer Computer Vision Project</h3>
+                    <p class="project-description">
+                        Spatial soccer analytics using object detection and homography.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Object Detection</span>
+                        <span class="tag">K-Means</span>
+                        <span class="tag">Voronoi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card" onclick="openModal('project5Modal')">
+                <img src="SOLBG.png" alt="Solana Trading Bot" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Solana Trading Bot</h3>
+                    <p class="project-description">
+                        Modular token-discovery framework for Solana markets.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Crypto</span>
+                        <span class="tag">APIs</span>
+                        <span class="tag">Web Scraping</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card" onclick="openModal('project6Modal')">
+                <img src="CCBG.jpeg" alt="Credit Card Fraud Neural Network" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Credit Card Fraud Deep Neural Network</h3>
+                    <p class="project-description">
+                        Deep learning on extreme class-imbalance fraud data.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Keras</span>
+                        <span class="tag">SMOTE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card" onclick="openModal('project7Modal')">
+                <img src="KAI.jpg" alt="Kitchen AI Assistant" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Kitchen AI Assistant</h3>
+                    <p class="project-description">
+                        Personalized cooking recommendations using NLP and ML.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Personalization</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card" onclick="openModal('project8Modal')">
+                <img src="sales.png" alt="Salesforce CRM Pipeline" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">Salesforce CRM Pipeline</h3>
+                    <p class="project-description">
+                        End-to-end CRM analytics pipeline with Streamlit dashboard.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">DuckDB</span>
+                        <span class="tag">ETL</span>
+                        <span class="tag">Streamlit</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Project Modal Windows -->
-    <!-- Project 1 Modal - EPL Player Live Shot Chart -->
+    <!-- ================= MODALS ================= -->
+    
+    <!-- ===== PROJECT 1 MODAL ===== -->
     <div id="project1Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project1Modal')">&times;</span>
             <h2 class="modal-title">EPL Player Live Shot Chart</h2>
-            <div class="modal-description">
-                <p>This notebook uses BeautifulSoup for live HTML web scraping of understat.com's English Premier League database. The application pulls relevant data based on user inputs, cleans and transforms it into relational databases. Using pyplot, it visualizes a player shot chart that's accurate up to the second of the request.</p>
-                <p>The tool allows analysts and football enthusiasts to see real-time visualization of where players are taking shots from, helping to identify patterns and preferences in shooting positions. This information can be valuable for tactical analysis, player scouting, and fantasy football decisions.</p>
-            </div>
+    
             <div class="modal-gallery">
-                <img src="EPLBG.png" alt="EPL Shot Chart Example" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="EPLBG.png" class="gallery-img" alt="EPL Shot Chart">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">BeautifulSoup</span>
-                <span class="modal-tag">Pyplot</span>
-                <span class="modal-tag">Web Scraping</span>
-                <span class="modal-tag">Data Visualization</span>
-                <span class="modal-tag">Sports Analytics</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Live HTML scraping of Understat EPL data using BeautifulSoup</li>
+                            <li>User-driven data extraction and relational transformation</li>
+                            <li>Real-time matplotlib shot maps accurate to execution time</li>
+                        </ul>
+                    </li>
+                    <li><strong>How It Works</strong>
+                        <ul>
+                            <li>Scrapes embedded JavaScript shot data</li>
+                            <li>Normalizes xG, outcome, and spatial attributes</li>
+                            <li>Plots shot distributions with visual encodings</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul><li>Live player-specific shot maps per execution</li></ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>End-to-end live scraping → visualization pipeline</li>
+                            <li>Highlights spatial shooting tendencies</li>
+                            <li>Extensible to season, team, and xG aggregation</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/EPLPlayerShotChart" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/EPLPlayerShotChart" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
-
-    <!-- Project 2 Modal - Security Price Predictors -->
+    
+    <!-- ===== PROJECT 2 MODAL ===== -->
     <div id="project2Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project2Modal')">&times;</span>
             <h2 class="modal-title">Security Price Predictors</h2>
-            <div class="modal-description">
-                <p>This project builds sophisticated sentiment models for both traditional securities like the S&P 500 and nontraditional assets such as Bitcoin. It live scrapes data from various sources to perform sentiment analysis, which is then used to gauge price predictions and market trends.</p>
-                <p>The system backtests strategies before advising users whether to take action given the current market circumstances. By combining technical analysis with sentiment data from news articles, social media, and other sources, the model aims to provide more accurate predictions than traditional methods alone.</p>
-            </div>
+    
             <div class="modal-gallery">
-                <img src="BTCBG.jpeg" alt="Bitcoin Price Prediction" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="BTCBG.jpeg" class="gallery-img" alt="Security Price Predictor">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">Sentiment Analysis</span>
-                <span class="modal-tag">Financial Modeling</span>
-                <span class="modal-tag">Web Scraping</span>
-                <span class="modal-tag">Algorithmic Trading</span>
-                <span class="modal-tag">NLP</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Sentiment-driven models for equities and crypto</li>
+                            <li>Scrapes unstructured text for market signals</li>
+                        </ul>
+                    </li>
+                    <li><strong>Building Process</strong>
+                        <ul>
+                            <li>NLP feature engineering on news and discussions</li>
+                            <li>Backtested strategies with realistic assumptions</li>
+                            <li>Combined sentiment with technical indicators</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Improved signal quality vs technical-only baselines</li>
+                            <li>Evaluated return, drawdown, and hit rate</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/BTCPricePredictor" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/BTCPricePredictor" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
 
-    <!-- Project 3 Modal - US Election Popular Vote Predictor -->
+      <!-- ===== PROJECT 3 MODAL ===== -->
     <div id="project3Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project3Modal')">&times;</span>
             <h2 class="modal-title">US Election Popular Vote Predictor</h2>
-            <div class="modal-description">
-                <p>This model scrapes US election data for national polling and runs a machine learning algorithm that aggregates this data to make predictions for election outcomes. The predictor allows for a UI popup that displays the percentage likelihood for each candidate to win the popular vote.</p>
-                <p>By combining historical polling accuracy, demographic data, and current polling trends, the model creates a probabilistic forecast that accounts for polling error and uncertainty. This approach provides a more nuanced view of election predictions compared to simpler averaging methods.</p>
-            </div>
+    
             <div class="modal-gallery">
-                <img src="PVBG.jpeg" alt="Election Prediction Interface" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="PVBG.jpeg" class="gallery-img" alt="Election Popular Vote Predictor">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">Machine Learning</span>
-                <span class="modal-tag">Data Aggregation</span>
-                <span class="modal-tag">UI Development</span>
-                <span class="modal-tag">Political Analysis</span>
-                <span class="modal-tag">Statistical Modeling</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Built a U.S. presidential popular-vote prediction model using aggregated national polling data.</li>
+                            <li>Scrapes polling results, standardizes sources, and applies a machine-learning-based aggregation strategy.</li>
+                            <li>Displays real-time candidate win probabilities via a lightweight UI popup.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Overview / Building Process</strong>
+                        <ul>
+                            <li>Collected polling data from multiple sources to reduce single-poll bias.</li>
+                            <li>Cleaned and normalized sample sizes, dates, and candidate fields.</li>
+                            <li>Weighted polls based on recency and historical reliability.</li>
+                            <li>Applied probabilistic aggregation rather than deterministic point estimates.</li>
+                            <li>Integrated model outputs into an interpretable UI layer.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul>
+                            <li>Continuously updating probabilistic forecast of the U.S. popular vote.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Unified multi-source polling into a single prediction pipeline.</li>
+                            <li>Generated interpretable probability distributions for outcomes.</li>
+                            <li>Demonstrated improvements over simple polling averages.</li>
+                            <li>Delivered an end-to-end ingestion-to-UI workflow.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/ElectionPredictionModel" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/ElectionPredictionModel" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
-
-    <!-- Project 4 Modal - Soccer Computer Vision Project -->
+    
+    <!-- ===== PROJECT 4 MODAL ===== -->
     <div id="project4Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project4Modal')">&times;</span>
             <h2 class="modal-title">Soccer Computer Vision Project</h2>
-            <div class="modal-description">
-                <p>Based on DFB-Pokal game data from Roboflow, this project utilizes the Roboflow/HF API for advanced soccer analytics. The project covers object detection to track players and the ball, homography fundamentals to map camera views to a standard pitch, and K-means clustering to analyze player positioning patterns.</p>
-                <p>The result is a Voronoi diagram of the game clip, showing the areas of control for each player, along with a ball tracking diagram that visualizes movement patterns. This type of analysis can provide coaches and analysts with insights into team tactics, space utilization, and player movement that might not be visible to the naked eye.</p>
-            </div>
+    
             <div class="modal-gallery">
-                <img src="CVBG.png" alt="Soccer Computer Vision Analysis" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="CVBG.png" class="gallery-img" alt="Soccer Computer Vision Analysis">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Computer Vision</span>
-                <span class="modal-tag">Object Detection</span>
-                <span class="modal-tag">K-Means Clustering</span>
-                <span class="modal-tag">Voronoi Diagram</span>
-                <span class="modal-tag">Sports Analytics</span>
-                <span class="modal-tag">Python</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Applies computer vision and unsupervised learning to professional soccer match footage.</li>
+                            <li>Uses Roboflow and Hugging Face APIs to detect players and the ball.</li>
+                            <li>Projects camera views onto a normalized pitch using homography.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Overview / Building Process</strong>
+                        <ul>
+                            <li>Ingested annotated match footage via the Roboflow API.</li>
+                            <li>Extracted frame-level positional data for players and ball.</li>
+                            <li>Applied homography transformations for spatial normalization.</li>
+                            <li>Used K-means clustering to analyze player positioning patterns.</li>
+                            <li>Constructed Voronoi diagrams to model zones of control.</li>
+                            <li>Visualized ball trajectories to analyze tempo and movement.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul>
+                            <li>Converted raw broadcast footage into spatially consistent tactical analytics.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Tracked players and ball across video frames.</li>
+                            <li>Generated homography-aligned pitch mappings.</li>
+                            <li>Visualized player influence via Voronoi diagrams.</li>
+                            <li>Surfaced tactical patterns not easily observable live.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/SoccerCVProj1" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/SoccerCVProj1" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
-
-    <!-- Project 5 Modal - Solana Trading Bot -->
+    
+    <!-- ===== PROJECT 5 MODAL ===== -->
     <div id="project5Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project5Modal')">&times;</span>
             <h2 class="modal-title">Solana Trading Bot</h2>
-            <div class="modal-description">
-                <p>This bot shell code uses web scraping of gmgn.ai to snipe prospective tokens based on user preferences and risk tolerance. The public code is purposely open-ended for personal customization, allowing users to adapt it to their specific trading strategies.</p>
-                <p>The bot includes multiple validation layers with paid API integration for online sentiment analysis and financial metrics, providing greater accuracy in token selection. This approach helps traders identify potential opportunities on the Solana blockchain before they become widely recognized.</p>
-            </div>
+    
             <div class="modal-gallery">
-                <img src="SOLBG.png" alt="Solana Trading Bot Interface" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="SOLBG.png" class="gallery-img" alt="Solana Trading Bot">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">Web Scraping</span>
-                <span class="modal-tag">API Integration</span>
-                <span class="modal-tag">Cryptocurrency</span>
-                <span class="modal-tag">Blockchain</span>
-                <span class="modal-tag">Algorithmic Trading</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Modular bot framework for identifying early-stage token opportunities on Solana.</li>
+                            <li>Scrapes market-facing data from gmgn.ai and applies user-defined filters.</li>
+                            <li>Designed as a customizable shell for strategy experimentation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Overview / Building Process</strong>
+                        <ul>
+                            <li>Implemented scraping pipeline for newly listed and trending tokens.</li>
+                            <li>Designed configurable scoring based on risk tolerance.</li>
+                            <li>Integrated third-party APIs for sentiment and financial metrics.</li>
+                            <li>Added multi-stage validation to reduce noise.</li>
+                            <li>Separated ingestion, signal evaluation, and execution logic.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul>
+                            <li>Flexible foundation for automated token discovery.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Aggregated and enriched Solana token data.</li>
+                            <li>Demonstrated multi-layer filtering for early-stage screening.</li>
+                            <li>Reusable architecture adaptable to multiple strategies.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/SolanaBOT" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/SolanaBOT" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
-
-    <!-- Project 6 Modal - Credit Card Fraud Deep Learning Neural Network -->
+    
+    <!-- ===== PROJECT 6 MODAL ===== -->
     <div id="project6Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project6Modal')">&times;</span>
-            <h2 class="modal-title">Credit Card Fraud Deep Learning Neural Network</h2>
-            <div class="modal-description">
-                <p>This notebook analyzes a highly unbalanced Kaggle Credit Card Fraud dataset. The project compares different classifiers for an undersampled versus an oversampled (SMOTE) neural network, leveraging Keras and TensorFlow frameworks.</p>
-                <p>Given the extreme imbalance in fraud detection datasets (with fraud cases typically less than 1% of transactions), the notebook explores techniques to address this challenge. By comparing various approaches, it demonstrates the effectiveness of different sampling methods in improving fraud detection accuracy without sacrificing precision.</p>
-            </div>
+            <h2 class="modal-title">Credit Card Fraud Deep Neural Network</h2>
+    
             <div class="modal-gallery">
-                <img src="CCBG.jpeg" alt="Credit Card Fraud Neural Network" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="CCBG.jpeg" class="gallery-img" alt="Credit Card Fraud Neural Network">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">Keras</span>
-                <span class="modal-tag">TensorFlow</span>
-                <span class="modal-tag">SMOTE</span>
-                <span class="modal-tag">Neural Networks</span>
-                <span class="modal-tag">Fraud Detection</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Analyzes a highly imbalanced Kaggle credit card fraud dataset.</li>
+                            <li>Compares undersampling vs SMOTE-based oversampling approaches.</li>
+                            <li>Implements deep learning models using Keras and TensorFlow.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Overview / Building Process</strong>
+                        <ul>
+                            <li>Quantified extreme class imbalance in fraud detection.</li>
+                            <li>Built baseline neural network classifiers.</li>
+                            <li>Applied undersampling and SMOTE-based oversampling.</li>
+                            <li>Evaluated models using precision, recall, and confusion matrices.</li>
+                            <li>Isolated sampling impacts through controlled experiments.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul>
+                            <li>Demonstrated how sampling strategy materially impacts fraud detection performance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Improved fraud-class recall over imbalance-unaware baselines.</li>
+                            <li>Quantified precision degradation from oversampling.</li>
+                            <li>Validated SMOTE effectiveness for minority-class amplification.</li>
+                            <li>Delivered a reproducible evaluation framework.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/CreditCardNN" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/CreditCardNN" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
-
-    <!-- Project 7 Modal - Kitchen AI Assistant -->
+    
+    <!-- ===== PROJECT 7 MODAL ===== -->
     <div id="project7Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project7Modal')">&times;</span>
             <h2 class="modal-title">Kitchen AI Assistant</h2>
-            <div class="modal-description">
-                <p>The Kitchen AI Assistant is a smart tool designed to enhance your cooking experience. It provides recipe recommendations based on ingredients you have available, suggests viable substitutions when you're missing specific items, and offers cooking techniques tailored to your skill level.</p>
-                <p>Leveraging natural language processing and machine learning algorithms, this assistant understands your preferences over time and can adapt its suggestions to match your dietary restrictions, taste preferences, and cooking equipment. It's designed to make cooking more accessible and reduce food waste by helping you utilize what you already have.</p>
-            </div>
+    
             <div class="modal-gallery">
-                <img src="KAI.jpg" alt="Kitchen AI Assistant Interface" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="KAI.jpg" class="gallery-img" alt="Kitchen AI Assistant">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">NLP</span>
-                <span class="modal-tag">Machine Learning</span>
-                <span class="modal-tag">API Integration</span>
-                <span class="modal-tag">Food Science</span>
-                <span class="modal-tag">User Personalization</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Adaptive cooking assistant using NLP and machine learning.</li>
+                            <li>Recommends recipes, substitutions, and techniques based on user context.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Overview / Building Process</strong>
+                        <ul>
+                            <li>Designed flexible ingredient and constraint schemas.</li>
+                            <li>Built NLP pipelines for cooking context and preferences.</li>
+                            <li>Integrated structured recipe metadata.</li>
+                            <li>Implemented substitution and preference-learning logic.</li>
+                            <li>Separated parsing, recommendation, and personalization layers.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul>
+                            <li>Context-aware, personalized cooking recommendations.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Ingredient-aware recipe suggestions.</li>
+                            <li>Preference adaptation across repeated interactions.</li>
+                            <li>Skill-level-aware technique guidance.</li>
+                            <li>Reduced ingredient waste through substitutions.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/AIKitchenAssistant" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/AIKitchenAssistant" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
-
-    <!-- Project 8 Modal - Salesforce CRM Pipeline -->
+    
+    <!-- ===== PROJECT 8 MODAL ===== -->
     <div id="project8Modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('project8Modal')">&times;</span>
             <h2 class="modal-title">Salesforce CRM Pipeline</h2>
-            <div class="modal-description">
-                <p>Designed and deployed an end-to-end CRM analytics dashboard. Ingested 37 K pipeline records from a multi-table Kaggle dataset, built an ETL layer in Python/DuckDB, and shipped an interactive Streamlit front-end that surfaces conversion-rate, deal-velocity, and rep performance KPIs.</p>
-            </div>
+    
             <div class="modal-gallery">
-                <img src="sales.png" alt="Salesforce CRM Pipeline Dashboard" class="gallery-img">
-                <!-- Add more gallery images as needed -->
+                <img src="sales.png" class="gallery-img" alt="Salesforce CRM Pipeline">
             </div>
-            <div class="modal-tags">
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">Salesforce API</span>
-                <span class="modal-tag">Data Visualization</span>
-                <span class="modal-tag">Automation</span>
-                <span class="modal-tag">CRM</span>
-                <span class="modal-tag">Sales Analytics</span>
+    
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>End-to-end CRM analytics pipeline transforming raw Salesforce-style data into insights.</li>
+                            <li>Processes ~37K pipeline records and surfaces KPIs via Streamlit.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Overview / Building Process</strong>
+                        <ul>
+                            <li>Built Python/DuckDB ETL pipelines for multi-table CRM data.</li>
+                            <li>Normalized leads, opportunities, and activities.</li>
+                            <li>Engineered conversion, velocity, and rep-performance metrics.</li>
+                            <li>Implemented cohort tracking and date bucketing.</li>
+                            <li>Developed interactive Streamlit dashboards.</li>
+                            <li>Separated ingestion, transformation, and visualization layers.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul>
+                            <li>Executive-ready CRM insights with real-time funnel visibility.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Processed ~37,000 CRM records into a unified schema.</li>
+                            <li>Visualized funnel conversion and velocity trends.</li>
+                            <li>Improved visibility into rep- and stage-level performance.</li>
+                            <li>Reusable analytics framework extensible to real CRM systems.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <a href="https://github.com/mykldggn/SalesforceCRMPipeline" class="modal-link" target="_blank">View Repository</a>
+    
+            <a href="https://github.com/mykldggn/SalesforceCRMPipeline" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
 
