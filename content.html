@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Michael Duggan's project portfolio — ML, data science, full-stack analytics, and more.">
     <title>Projects | Michael Duggan</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial' font-size='18' font-weight='700' fill='white'>MD</text></svg>">
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -152,6 +153,30 @@
 
         .project-card:hover .project-image {
             transform: scale(1.05);
+        }
+
+        .project-image-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hover-hint {
+            position: absolute;
+            inset: 0;
+            background: rgba(37, 99, 235, 0.72);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-hover-hint {
+            opacity: 1;
         }
 
         .project-content {
@@ -325,23 +350,30 @@
 
         .close-modal {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 28px;
+            top: 16px;
+            right: 16px;
             cursor: pointer;
             color: var(--text-gray);
             transition: all 0.3s ease;
-            width: 40px;
-            height: 40px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            background-color: var(--light-gray);
+            border: none;
         }
 
         .close-modal:hover {
             color: var(--primary-blue);
             background-color: var(--light-blue);
+        }
+
+        .close-modal .close-x {
+            font-size: 20px;
+            line-height: 1;
         }
 
         .modal-title {
@@ -497,6 +529,10 @@
                 padding: 20px;
                 margin: 10% auto;
             }
+
+            .project-image {
+                height: 180px;
+            }
         }
     </style>
 </head>
@@ -531,8 +567,11 @@
 
             <!-- Project 9 — MLB Analytics (pinned first) -->
             <div class="project-card" onclick="openModal('project9Modal')" style="position:relative;">
-                <span style="position:absolute;top:12px;left:12px;z-index:2;background:#16a34a;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;">● LIVE</span>
-                <img src="MLBBG.png" alt="MLB Advanced Analytics Platform" class="project-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2563eb)';this.style.minHeight='220px';this.removeAttribute('src')">
+                <span style="position:absolute;top:12px;left:12px;z-index:3;background:#16a34a;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;">● LIVE</span>
+                <div class="project-image-wrap">
+                    <img src="MLBBG.png" alt="MLB Advanced Analytics Platform" class="project-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2563eb)';this.style.minHeight='220px';this.removeAttribute('src')">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">MLB Advanced Analytics Platform</h3>
                     <p class="project-description">
@@ -550,7 +589,10 @@
 
             <!-- Project 1 -->
             <div class="project-card" onclick="openModal('project1Modal')">
-                <img src="EPLBG.png" alt="EPL Player Live Shot Chart" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="EPLBG.png" alt="EPL Player Live Shot Chart" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">EPL Player Live Shot Chart</h3>
                     <p class="project-description">
@@ -567,7 +609,10 @@
 
             <!-- Project 2 -->
             <div class="project-card" onclick="openModal('project2Modal')">
-                <img src="BTCBG.jpeg" alt="Security Price Predictors" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="BTCBG.jpeg" alt="Security Price Predictors" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Security Price Predictors</h3>
                     <p class="project-description">
@@ -584,7 +629,10 @@
 
             <!-- Project 3 -->
             <div class="project-card" onclick="openModal('project3Modal')">
-                <img src="PVBG.jpeg" alt="US Election Popular Vote Predictor" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="PVBG.jpeg" alt="US Election Popular Vote Predictor" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">US Election Popular Vote Predictor</h3>
                     <p class="project-description">
@@ -601,7 +649,10 @@
 
             <!-- Project 4 -->
             <div class="project-card" onclick="openModal('project4Modal')">
-                <img src="CVBG.png" alt="Soccer Computer Vision Project" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="CVBG.png" alt="Soccer Computer Vision Project" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Soccer Computer Vision Project</h3>
                     <p class="project-description">
@@ -618,7 +669,10 @@
 
             <!-- Project 5 -->
             <div class="project-card" onclick="openModal('project5Modal')">
-                <img src="SOLBG.png" alt="Solana Trading Bot" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="SOLBG.png" alt="Solana Trading Bot" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Solana Trading Bot</h3>
                     <p class="project-description">
@@ -635,7 +689,10 @@
 
             <!-- Project 6 -->
             <div class="project-card" onclick="openModal('project6Modal')">
-                <img src="CCBG.jpeg" alt="Credit Card Fraud Neural Network" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="CCBG.jpeg" alt="Credit Card Fraud Neural Network" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Credit Card Fraud Deep Neural Network</h3>
                     <p class="project-description">
@@ -652,7 +709,10 @@
 
             <!-- Project 7 -->
             <div class="project-card" onclick="openModal('project7Modal')">
-                <img src="KAI.jpg" alt="Kitchen AI Assistant" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="KAI.jpg" alt="Kitchen AI Assistant" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Kitchen AI Assistant</h3>
                     <p class="project-description">
@@ -669,7 +729,10 @@
 
             <!-- Project 8 -->
             <div class="project-card" onclick="openModal('project8Modal')">
-                <img src="sales.png" alt="Salesforce CRM Pipeline" class="project-image">
+                <div class="project-image-wrap">
+                    <img src="sales.png" alt="Salesforce CRM Pipeline" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Salesforce CRM Pipeline</h3>
                     <p class="project-description">
@@ -693,7 +756,7 @@
     <!-- ===== PROJECT 1 MODAL ===== -->
     <div id="project1Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project1Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project1Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">EPL Player Live Shot Chart</h2>
     
             <div class="modal-gallery">
@@ -736,7 +799,7 @@
     <!-- ===== PROJECT 2 MODAL ===== -->
     <div id="project2Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project2Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project2Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">Security Price Predictors</h2>
     
             <div class="modal-gallery">
@@ -774,7 +837,7 @@
       <!-- ===== PROJECT 3 MODAL ===== -->
     <div id="project3Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project3Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project3Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">US Election Popular Vote Predictor</h2>
     
             <div class="modal-gallery">
@@ -822,7 +885,7 @@
     <!-- ===== PROJECT 4 MODAL ===== -->
     <div id="project4Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project4Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project4Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">Soccer Computer Vision Project</h2>
     
             <div class="modal-gallery">
@@ -871,7 +934,7 @@
     <!-- ===== PROJECT 5 MODAL ===== -->
     <div id="project5Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project5Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project5Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">Solana Trading Bot</h2>
     
             <div class="modal-gallery">
@@ -918,7 +981,7 @@
     <!-- ===== PROJECT 6 MODAL ===== -->
     <div id="project6Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project6Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project6Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">Credit Card Fraud Deep Neural Network</h2>
     
             <div class="modal-gallery">
@@ -966,7 +1029,7 @@
     <!-- ===== PROJECT 7 MODAL ===== -->
     <div id="project7Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project7Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project7Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">Kitchen AI Assistant</h2>
     
             <div class="modal-gallery">
@@ -1013,7 +1076,7 @@
     <!-- ===== PROJECT 8 MODAL ===== -->
     <div id="project8Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project8Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project8Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">Salesforce CRM Pipeline</h2>
     
             <div class="modal-gallery">
@@ -1061,7 +1124,7 @@
     <!-- ===== PROJECT 9 MODAL ===== -->
     <div id="project9Modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('project9Modal')">&times;</span>
+            <button class="close-modal" onclick="closeModal('project9Modal')"><span class="close-x">&times;</span> Close</button>
             <h2 class="modal-title">MLB Advanced Analytics Platform</h2>
 
             <div class="modal-gallery">
