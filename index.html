@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <meta name="description" content="Michael Duggan — Full-Stack Data Scientist. MS Information Systems, University of Washington. Specializing in ML, analytics pipelines, and deployed web applications.">
+    <title>Michael Duggan | Data Scientist</title>
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -51,6 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -487,6 +489,28 @@
             margin-top: 20px;
         }
 
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -513,7 +537,37 @@
                 font-size: 30px;
             }
 
+            .hamburger {
+                display: flex;
+            }
+
             .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-blue);
+                flex-direction: column;
+                padding: 10px 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+
+            .nav-links a:after {
                 display: none;
             }
 
@@ -542,7 +596,7 @@
         <div class="container">
             <nav>
                 <div class="logo">Michael Duggan</div>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -550,6 +604,9 @@
                     <li><a href="content.html">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -561,8 +618,8 @@
             Your browser does not support the video tag.
         </video>
         <div class="container">
-            <h1>Welcome to My Portfolio!</h1>
-            <p>Recent Graduate from the University of Washington pursuing a career as a Data Scientist.</p>
+            <h1>Michael Duggan</h1>
+            <p>Full-Stack Data Scientist — ML pipelines, analytics applications, and deployed production software. MS Information Systems, University of Washington 2025.</p>
             <a href="content.html" class="cta-button">View My Projects</a>
         </div>
     </section>
@@ -573,7 +630,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Graduate Student and motivated leader who has been successful in driving team collaboration, fostering innovation, and achieving results in dynamic and challenging environments throughout my time at the University of Washington. I am currently seeking a career as a Data Scientist in the Greater Seattle Area.</p>
+                    <p>Recent graduate with a Master of Science in Information Systems from the University of Washington, specializing in machine learning, analytics pipelines, and full-stack application development. I build things end-to-end — from data engineering and model development to deployed production software — and I'm actively seeking a Data Scientist or ML Engineer role in the Greater Seattle Area.</p>
                 </div>
                 <div class="about-image">
                     <img src="portrait.jpeg" alt="Profile Picture">
@@ -620,9 +677,9 @@
                     <p class="education-date">October 2024 - June 2025</p>
                     <p class="education-title">ScalarField | Seattle, WA | scalarfield.io</p>
                     <ul>
-                        <li>Currently: Coding RAG systems to extract data from SEC filings.</li>
-                        <li>Helped and optimize backend for a financial language model (LLM), facilitating the processing and analysis of securities data.</li>
-                        <li>Created Python-based scripts to compute financial Greeks (Delta, Gamma, Theta, etc.) from local datasets.</li>
+                        <li>Built RAG pipelines to extract and structure data from SEC filings for downstream financial analysis.</li>
+                        <li>Developed and optimized backend components for a financial LLM, supporting processing and analysis of securities data.</li>
+                        <li>Created Python scripts to compute financial Greeks (Delta, Gamma, Theta, etc.) from local datasets.</li>
                     </ul>
                 </div>
 
@@ -672,31 +729,30 @@
                 <div class="skill-card">
                     <h3>Libraries & Frameworks</h3>
                     <ul>
-                        <li>NumPy</li>
-                        <li>Pandas</li>
-                        <li>TensorFlow</li>
-                        <li>Keras</li>
+                        <li>React & React Query</li>
+                        <li>FastAPI</li>
+                        <li>NumPy & Pandas</li>
+                        <li>TensorFlow & Keras</li>
                         <li>Scikit-Learn</li>
                         <li>XGBoost & Gradient Boosting</li>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                        <li>Plotly</li>
-                        <li>BeautifulSoup</li>
-                        <li>Scrapy</li>
+                        <li>Matplotlib, Seaborn, Plotly</li>
+                        <li>Recharts</li>
+                        <li>Tailwind CSS</li>
+                        <li>BeautifulSoup & Scrapy</li>
                     </ul>
                 </div>
-    
+
                 <div class="skill-card">
                     <h3>Tools & Technologies</h3>
                     <ul>
-                        <li>Jupyter Notebooks</li>
-                        <li>Git & GitHub (including Pages)</li>
+                        <li>Docker & Railway</li>
+                        <li>Vercel</li>
+                        <li>Git & GitHub</li>
                         <li>Microsoft Azure</li>
                         <li>AWS Ecosystem</li>
                         <li>Snowflake</li>
-                        <li>Microsoft Office Products</li>
-                        <li>DataQuest [Python & Data Visualization]</li>
-                        <li>Web Scraping & API Integration</li>
+                        <li>Jupyter Notebooks</li>
+                        <li>REST API Design & Integration</li>
                         <li>RAG / LLM Pipelines</li>
                     </ul>
                 </div>
@@ -719,6 +775,22 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.getElementById('hamburger');
+            nav.classList.toggle('open');
+            btn.classList.toggle('open');
+        }
+        // Close menu when a link is clicked
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+                document.getElementById('hamburger').classList.remove('open');
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer>

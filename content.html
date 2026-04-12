@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
+    <meta name="description" content="Michael Duggan's project portfolio — ML, data science, full-stack analytics, and more.">
+    <title>Projects | Michael Duggan</title>
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -52,6 +53,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -414,6 +416,27 @@
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
         }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -423,7 +446,37 @@
                 font-size: 30px;
             }
 
+            .hamburger {
+                display: flex;
+            }
+
             .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-blue);
+                flex-direction: column;
+                padding: 10px 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+
+            .nav-links a:after {
                 display: none;
             }
 
@@ -454,7 +507,7 @@
         <div class="container">
             <nav>
                 <div class="logo">Michael Duggan</div>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#education">Education</a></li>
                     <li><a href="index.html#experience">Experience</a></li>
@@ -462,6 +515,9 @@
                     <li><a href="content.html">Projects</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
+                <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -472,6 +528,25 @@
         <h2 class="section-title">My Projects</h2>
 
         <div class="projects-grid">
+
+            <!-- Project 9 — MLB Analytics (pinned first) -->
+            <div class="project-card" onclick="openModal('project9Modal')" style="position:relative;">
+                <span style="position:absolute;top:12px;left:12px;z-index:2;background:#16a34a;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;">● LIVE</span>
+                <img src="MLBBG.png" alt="MLB Advanced Analytics Platform" class="project-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2563eb)';this.style.minHeight='220px';this.removeAttribute('src')">
+                <div class="project-content">
+                    <h3 class="project-title">MLB Advanced Analytics Platform</h3>
+                    <p class="project-description">
+                        Full-stack Statcast analytics app — WAR, wRC+, Park Factors, player comparisons, and a custom PFI stat. Live on Vercel + Railway.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Statcast</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- Project 1 -->
             <div class="project-card" onclick="openModal('project1Modal')">
@@ -605,24 +680,6 @@
                         <span class="tag">DuckDB</span>
                         <span class="tag">ETL</span>
                         <span class="tag">Streamlit</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 9 -->
-            <div class="project-card" onclick="openModal('project9Modal')">
-                <img src="MLBBG.png" alt="MLB Advanced Analytics Platform" class="project-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2563eb)';this.style.minHeight='220px';this.removeAttribute('src')">
-                <div class="project-content">
-                    <h3 class="project-title">MLB Advanced Analytics Platform</h3>
-                    <p class="project-description">
-                        Full-stack Statcast analytics app — WAR, wRC+, Park Factors, player comparisons, and a custom PFI stat. Live on Vercel + Railway.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Statcast</span>
                     </div>
                 </div>
             </div>
@@ -1057,7 +1114,10 @@
                 <span class="modal-tag">Vercel</span>
             </div>
 
-            <a href="https://github.com/mykldggn/mlb-analytics" target="_blank" class="modal-link">View Repository</a>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="https://github.com/mykldggn/mlb-analytics" target="_blank" class="modal-link">View Repository</a>
+                <a href="https://mlb-analytics.vercel.app/" target="_blank" class="modal-link" style="background-color:#16a34a;">● Live Demo</a>
+            </div>
         </div>
     </div>
 
@@ -1068,9 +1128,25 @@
                 <a href="https://www.linkedin.com/in/miklduggan" target="_blank">LinkedIn</a>
                 <a href="https://github.com/mykldggn" target="_blank">GitHub</a>
             </div>
-            <p class="footer-text">&copy; 2025 Michael Duggan. All Rights Reserved.</p>
+            <p class="footer-text">&copy; 2026 Michael Duggan. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Hamburger nav -->
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('navLinks');
+            const btn = document.getElementById('hamburger');
+            nav.classList.toggle('open');
+            btn.classList.toggle('open');
+        }
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+                document.getElementById('hamburger').classList.remove('open');
+            });
+        });
+    </script>
 
     <!-- JavaScript for Modal Functionality -->
     <script>
