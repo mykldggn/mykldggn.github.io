@@ -609,6 +609,24 @@
                 </div>
             </div>
 
+            <!-- Project 9 -->
+            <div class="project-card" onclick="openModal('project9Modal')">
+                <img src="MLBBG.png" alt="MLB Advanced Analytics Platform" class="project-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2563eb)';this.style.minHeight='220px';this.removeAttribute('src')">
+                <div class="project-content">
+                    <h3 class="project-title">MLB Advanced Analytics Platform</h3>
+                    <p class="project-description">
+                        Full-stack Statcast analytics app — WAR, wRC+, Park Factors, player comparisons, and a custom PFI stat. Live on Vercel + Railway.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Statcast</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -980,6 +998,66 @@
             </div>
     
             <a href="https://github.com/mykldggn/SalesforceCRMPipeline" target="_blank" class="modal-link">View Repository</a>
+        </div>
+    </div>
+
+    <!-- ===== PROJECT 9 MODAL ===== -->
+    <div id="project9Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('project9Modal')">&times;</span>
+            <h2 class="modal-title">MLB Advanced Analytics Platform</h2>
+
+            <div class="modal-gallery">
+                <img src="MLBBG.png" class="gallery-img" alt="MLB Advanced Analytics" onerror="this.style.display='none'">
+            </div>
+
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Overview</strong>
+                        <ul>
+                            <li>Full-stack baseball analytics web app deployed live on Vercel (frontend) and Railway (backend).</li>
+                            <li>Aggregates data from MLB Stats API, Baseball Savant (Statcast), and Baseball Reference WAR CSVs — no paid API required.</li>
+                            <li>Features player profiles, leaderboards, spray charts, pitch zone heatmaps, team analytics, and contract value analysis.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Custom Statistic: Park Favorability Index (PFI)</strong>
+                        <ul>
+                            <li>Designed a composite 0–200 score quantifying how each ballpark affects batters and pitchers.</li>
+                            <li>Built from 3-year rolling home/away splits (runs, HR, BABIP, K, BB, EV) fetched live from the MLB Stats API.</li>
+                            <li>Pitcher PFI = 200 − Batter PFI, giving a mirrored scale for both sides.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tech Stack</strong>
+                        <ul>
+                            <li>Frontend: React 18, TypeScript, Vite, Tailwind CSS, Recharts, React Query</li>
+                            <li>Backend: Python 3.11, FastAPI, pandas, httpx — Parquet disk cache + in-memory TTLCache</li>
+                            <li>Deployment: Railway (Docker container), Vercel (static frontend)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Key Features</strong>
+                        <ul>
+                            <li>Statcast metrics: xBA, xSLG, xwOBA, Barrel%, Hard Hit%, Exit Velocity, Launch Angle</li>
+                            <li>Platoon splits (vs LHP/RHP, Home/Away) with deduplication for mid-season trades</li>
+                            <li>Player comparison radar charts, year-by-year career trends, spray charts</li>
+                            <li>Team Historical Analytics: WAR/wRC+/FIP vs win% correlations across single seasons or all-season aggregates (2015–present)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-tags">
+                <span class="modal-tag">React</span>
+                <span class="modal-tag">TypeScript</span>
+                <span class="modal-tag">FastAPI</span>
+                <span class="modal-tag">Python</span>
+                <span class="modal-tag">Statcast</span>
+                <span class="modal-tag">pandas</span>
+                <span class="modal-tag">Docker</span>
+                <span class="modal-tag">Railway</span>
+                <span class="modal-tag">Vercel</span>
+            </div>
+
+            <a href="https://github.com/mykldggn/mlb-analytics" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
 
