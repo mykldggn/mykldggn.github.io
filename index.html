@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Michael Duggan — Full-Stack Data Scientist. MS Information Systems, University of Washington. Specializing in ML, analytics pipelines, and deployed web applications.">
+    <meta property="og:title" content="Michael Duggan | Data Scientist">
+    <meta property="og:description" content="Full-Stack Data Scientist — ML pipelines, analytics applications, and deployed production software. MS Information Systems, University of Washington 2025.">
+    <meta property="og:image" content="https://mykldggn.github.io/portrait.jpeg">
+    <meta property="og:url" content="https://mykldggn.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Michael Duggan | Data Scientist</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial' font-size='18' font-weight='700' fill='white'>MD</text></svg>">
     <style>
@@ -17,6 +23,8 @@
             --dark-gray: #1e293b;
             --text-gray: #475569;
         }
+
+        html { scroll-behavior: smooth; }
 
         * {
             margin: 0;
@@ -92,7 +100,8 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover:after {
+        .nav-links a:hover:after,
+        .nav-links a.nav-active:after {
             width: 100%;
         }
 
@@ -152,6 +161,139 @@
             background-color: var(--light-blue);
             transform: translateY(-3px);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button-outline {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.7);
+            margin-left: 16px;
+        }
+
+        .cta-button-outline:hover {
+            background-color: rgba(255,255,255,0.15);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ── Timeline ─────────────────────────────────── */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 44px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 22px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px var(--primary-blue);
+        }
+
+        /* ── Skill pills ──────────────────────────────── */
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .skill-pill {
+            background-color: var(--light-blue);
+            color: var(--secondary-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        .skill-pill:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ── Fade-in on scroll ────────────────────────── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Back to top ──────────────────────────────── */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(16px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
         }
 
         .about {
@@ -685,14 +827,18 @@
             <h1>Michael Duggan</h1>
             <p>Full-Stack Data Scientist — ML pipelines, analytics applications, and deployed production software. MS Information Systems, University of Washington 2025.</p>
             <a href="content.html" class="cta-button">View My Projects</a>
+            <a href="#contact" class="cta-button-outline">Get in Touch</a>
         </div>
     </section>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
+            <div class="about-content fade-in">
                 <div class="about-text">
                     <p>Recent graduate with a Master of Science in Information Systems from the University of Washington, specializing in machine learning, analytics pipelines, and full-stack application development. I build things end-to-end — from data engineering and model development to deployed production software — and I'm actively seeking a Data Scientist or ML Engineer role in the Greater Seattle Area.</p>
                 </div>
@@ -707,25 +853,29 @@
     <section id="education" class="section-white">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="education-content">
-                <div class="education-card">
-                    <h3>University of Washington | Seattle, WA</h3>
-                    <p class="education-date">June 2024 - June 2025</p>
-                    <p class="education-title">Masters of Science in Information Systems</p>
-                    <ul>
-                        <li>MSIS course structure applies Computer Science and Machine Learning concepts to meet Business Applications</li>
-                        <li>GPA: 3.7 | Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts</li>
-                    </ul>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="education-card">
+                        <h3>University of Washington | Seattle, WA</h3>
+                        <p class="education-date">June 2024 – June 2025</p>
+                        <p class="education-title">Masters of Science in Information Systems</p>
+                        <ul>
+                            <li>MSIS course structure applies Computer Science and Machine Learning concepts to meet Business Applications</li>
+                            <li>GPA: 3.7 | Curriculum Focus: Machine Learning & Analytics, Artificial Intelligence, & Cybersecurity Concepts</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="education-card">
-                    <h3>University of Washington | Seattle, WA</h3>
-                    <p class="education-date">October 2020 - March 2024</p>
-                    <p class="education-title">Foster School of Business | B.A. in Information Systems</p>
-                    <ul>
-                        <li>GPA 3.6 | Dean's List Honors | Sigma Nu Executive Board (2023)</li>
-                        <li>Completed topics on: Cybersecurity, Finance, Python For Business & Data, Database Management, & Data Analysis</li>
-                    </ul>
+                <div class="timeline-item fade-in">
+                    <div class="education-card">
+                        <h3>University of Washington | Seattle, WA</h3>
+                        <p class="education-date">October 2020 – March 2024</p>
+                        <p class="education-title">Foster School of Business | B.A. in Information Systems</p>
+                        <ul>
+                            <li>GPA 3.6 | Dean's List Honors | Sigma Nu Executive Board (2023)</li>
+                            <li>Completed topics on: Cybersecurity, Finance, Python For Business & Data, Database Management, & Data Analysis</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -735,38 +885,44 @@
     <section id="experience" class="section-tinted">
         <div class="container">
             <h2 class="section-title">Work & Leadership Experience</h2>
-            <div class="education-content">
-                <div class="education-card">
-                    <h3>LLM Development Intern (SWE Intern)</h3>
-                    <p class="education-date">October 2024 - June 2025</p>
-                    <p class="education-title">ScalarField | Seattle, WA | scalarfield.io</p>
-                    <ul>
-                        <li>Built RAG pipelines to extract and structure data from SEC filings for downstream financial analysis.</li>
-                        <li>Developed and optimized backend components for a financial LLM, supporting processing and analysis of securities data.</li>
-                        <li>Created Python scripts to compute financial Greeks (Delta, Gamma, Theta, etc.) from local datasets.</li>
-                    </ul>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="education-card">
+                        <h3>LLM Development Intern (SWE Intern)</h3>
+                        <p class="education-date">October 2024 – June 2025</p>
+                        <p class="education-title">ScalarField | Seattle, WA | scalarfield.io</p>
+                        <ul>
+                            <li>Built RAG pipelines to extract and structure data from SEC filings for downstream financial analysis.</li>
+                            <li>Developed and optimized backend components for a financial LLM, supporting processing and analysis of securities data.</li>
+                            <li>Created Python scripts to compute financial Greeks (Delta, Gamma, Theta, etc.) from local datasets.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="education-card">
-                    <h3>Assistant Manager</h3>
-                    <p class="education-date">July 2022 - Present</p>
-                    <p class="education-title">Delfino's Chicago Deep Dish Pizzeria | Seattle, WA</p>
-                    <ul>
-                        <li>Manage front of house IT to help fix network and process outages</li>
-                        <li>Manage and delegate tasks to 3-4 workers as shift lead when needed</li>
-                        <li>Engage in customer service opportunities & issues through all facets of the role</li>
-                    </ul>
+                <div class="timeline-item fade-in">
+                    <div class="education-card">
+                        <h3>Assistant Manager</h3>
+                        <p class="education-date">July 2022 – Present</p>
+                        <p class="education-title">Delfino's Chicago Deep Dish Pizzeria | Seattle, WA</p>
+                        <ul>
+                            <li>Manage front of house IT to help fix network and process outages</li>
+                            <li>Manage and delegate tasks to 3-4 workers as shift lead when needed</li>
+                            <li>Engage in customer service opportunities & issues through all facets of the role</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="education-card">
-                    <h3>IFC Standards Board Justice</h3>
-                    <p class="education-date">January 2023 - November 2023</p>
-                    <p class="education-title">University of Washington IFC | Seattle, WA</p>
-                    <ul>
-                        <li>Issued rulings as one of nine students at the University of Washington elected to oversee the disciplinary issues surrounding the entire Greek system of around 5,000+ members.</li>
-                        <li>Served as a representative to the University of Washington & Interfraternity Council.</li>
-                        <li>Advocated internally for changes to improve hazing and misconduct reporting.</li>
-                    </ul>
+                <div class="timeline-item fade-in">
+                    <div class="education-card">
+                        <h3>IFC Standards Board Justice</h3>
+                        <p class="education-date">January 2023 – November 2023</p>
+                        <p class="education-title">University of Washington IFC | Seattle, WA</p>
+                        <ul>
+                            <li>Issued rulings as one of nine students at the University of Washington elected to oversee the disciplinary issues surrounding the entire Greek system of around 5,000+ members.</li>
+                            <li>Served as a representative to the University of Washington & Interfraternity Council.</li>
+                            <li>Advocated internally for changes to improve hazing and misconduct reporting.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -778,47 +934,51 @@
             <h2 class="section-title">My Skills</h2>
             <div class="skills-container">
     
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <h3>Languages</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>SQL (mySQL, PostgreSQL)</li>
-                        <li>RStudio</li>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>HTML & CSS</li>
-                    </ul>
-                </div>
-    
-                <div class="skill-card">
-                    <h3>Libraries & Frameworks</h3>
-                    <ul>
-                        <li>React & React Query</li>
-                        <li>FastAPI</li>
-                        <li>NumPy & Pandas</li>
-                        <li>TensorFlow & Keras</li>
-                        <li>Scikit-Learn</li>
-                        <li>XGBoost & Gradient Boosting</li>
-                        <li>Matplotlib, Seaborn, Plotly</li>
-                        <li>Recharts</li>
-                        <li>Tailwind CSS</li>
-                        <li>BeautifulSoup & Scrapy</li>
-                    </ul>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">SQL</span>
+                        <span class="skill-pill">PostgreSQL</span>
+                        <span class="skill-pill">JavaScript</span>
+                        <span class="skill-pill">TypeScript</span>
+                        <span class="skill-pill">HTML &amp; CSS</span>
+                        <span class="skill-pill">R</span>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Tools & Technologies</h3>
-                    <ul>
-                        <li>Docker & Railway</li>
-                        <li>Vercel</li>
-                        <li>Git & GitHub</li>
-                        <li>Microsoft Azure</li>
-                        <li>AWS Ecosystem</li>
-                        <li>Snowflake</li>
-                        <li>Jupyter Notebooks</li>
-                        <li>REST API Design & Integration</li>
-                        <li>RAG / LLM Pipelines</li>
-                    </ul>
+                <div class="skill-card fade-in">
+                    <h3>Libraries &amp; Frameworks</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">React</span>
+                        <span class="skill-pill">React Query</span>
+                        <span class="skill-pill">FastAPI</span>
+                        <span class="skill-pill">NumPy</span>
+                        <span class="skill-pill">Pandas</span>
+                        <span class="skill-pill">TensorFlow</span>
+                        <span class="skill-pill">Keras</span>
+                        <span class="skill-pill">Scikit-Learn</span>
+                        <span class="skill-pill">XGBoost</span>
+                        <span class="skill-pill">Recharts</span>
+                        <span class="skill-pill">Tailwind CSS</span>
+                        <span class="skill-pill">BeautifulSoup</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <h3>Tools &amp; Technologies</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">Railway</span>
+                        <span class="skill-pill">Vercel</span>
+                        <span class="skill-pill">Git &amp; GitHub</span>
+                        <span class="skill-pill">Azure</span>
+                        <span class="skill-pill">AWS</span>
+                        <span class="skill-pill">Snowflake</span>
+                        <span class="skill-pill">Jupyter</span>
+                        <span class="skill-pill">REST APIs</span>
+                        <span class="skill-pill">RAG / LLM Pipelines</span>
+                    </div>
                 </div>
     
             </div>
@@ -830,7 +990,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Contact Information</h2>
-            <div class="contact-container">
+            <div class="contact-container fade-in">
                 <div class="contact-info">
                     <p>Email: michaelduggan415@gmail.com</p>
                     <p>Phone: (415) 816-2933</p>
@@ -851,19 +1011,51 @@
     </section>
 
     <script>
+        // ── Mobile nav ────────────────────────────────────────────────────────
         function toggleNav() {
             const nav = document.getElementById('navLinks');
             const btn = document.getElementById('hamburger');
             nav.classList.toggle('open');
             btn.classList.toggle('open');
         }
-        // Close menu when a link is clicked
         document.querySelectorAll('#navLinks a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('open');
                 document.getElementById('hamburger').classList.remove('open');
             });
         });
+
+        // ── Back to top ───────────────────────────────────────────────────────
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Fade-in on scroll ─────────────────────────────────────────────────
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+        // ── Active nav link on scroll ─────────────────────────────────────────
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navAnchors.forEach(a => a.classList.remove('nav-active'));
+                    const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('nav-active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => navObserver.observe(s));
     </script>
 
     <!-- Footer -->

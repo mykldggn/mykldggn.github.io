@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Michael Duggan's project portfolio — ML, data science, full-stack analytics, and more.">
+    <meta property="og:title" content="Projects | Michael Duggan">
+    <meta property="og:description" content="ML pipelines, full-stack analytics apps, computer vision, NLP, and more. Portfolio of Michael Duggan, Data Scientist.">
+    <meta property="og:image" content="https://mykldggn.github.io/MLBBG.png">
+    <meta property="og:url" content="https://mykldggn.github.io/content.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Projects | Michael Duggan</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial' font-size='18' font-weight='700' fill='white'>MD</text></svg>">
     <style>
+        html { scroll-behavior: smooth; }
         :root {
             --primary-blue: #2563eb;
             --secondary-blue: #1e40af;
@@ -469,6 +476,86 @@
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+        /* ── Active nav ──────────────────────────── */
+        .nav-links a.nav-active:after {
+            width: 100%;
+        }
+
+        /* ── Filter buttons ──────────────────────── */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background-color: var(--white);
+            color: var(--secondary-blue);
+            border: 2px solid var(--light-blue);
+            padding: 9px 22px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        /* ── Fade-in ─────────────────────────────── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Back to top ─────────────────────────── */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(16px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -548,7 +635,7 @@
                     <li><a href="index.html#education">Education</a></li>
                     <li><a href="index.html#experience">Experience</a></li>
                     <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="content.html">Projects</a></li>
+                    <li><a href="content.html" class="nav-active">Projects</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
                 <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
@@ -558,15 +645,26 @@
         </div>
     </header>
 
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
+
  <!-- ================= PROJECTS SECTION ================= -->
 <section class="projects">
     <div class="container">
         <h2 class="section-title">My Projects</h2>
 
+        <!-- Filter bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ml">ML / Data Science</button>
+            <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
+            <button class="filter-btn" data-filter="web-scraping">Web Scraping</button>
+        </div>
+
         <div class="projects-grid">
 
             <!-- Project 9 — MLB Analytics (pinned first) -->
-            <div class="project-card" onclick="openModal('project9Modal')" style="position:relative;">
+            <div class="project-card fade-in" onclick="openModal('project9Modal')" data-category="full-stack ml" style="position:relative;">
                 <span style="position:absolute;top:12px;left:12px;z-index:3;background:#16a34a;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;">● LIVE</span>
                 <div class="project-image-wrap">
                     <img src="MLBBG.png" alt="MLB Advanced Analytics Platform" class="project-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2563eb)';this.style.minHeight='220px';this.removeAttribute('src')">
@@ -588,7 +686,7 @@
             </div>
 
             <!-- Project 1 -->
-            <div class="project-card" onclick="openModal('project1Modal')">
+            <div class="project-card fade-in" onclick="openModal('project1Modal')" data-category="ml web-scraping">
                 <div class="project-image-wrap">
                     <img src="EPLBG.png" alt="EPL Player Live Shot Chart" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -608,7 +706,7 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card" onclick="openModal('project2Modal')">
+            <div class="project-card fade-in" onclick="openModal('project2Modal')" data-category="ml web-scraping">
                 <div class="project-image-wrap">
                     <img src="BTCBG.jpeg" alt="Security Price Predictors" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -628,7 +726,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="project-card" onclick="openModal('project3Modal')">
+            <div class="project-card fade-in" onclick="openModal('project3Modal')" data-category="ml">
                 <div class="project-image-wrap">
                     <img src="PVBG.jpeg" alt="US Election Popular Vote Predictor" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -648,7 +746,7 @@
             </div>
 
             <!-- Project 4 -->
-            <div class="project-card" onclick="openModal('project4Modal')">
+            <div class="project-card fade-in" onclick="openModal('project4Modal')" data-category="ml">
                 <div class="project-image-wrap">
                     <img src="CVBG.png" alt="Soccer Computer Vision Project" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -668,7 +766,7 @@
             </div>
 
             <!-- Project 5 -->
-            <div class="project-card" onclick="openModal('project5Modal')">
+            <div class="project-card fade-in" onclick="openModal('project5Modal')" data-category="web-scraping">
                 <div class="project-image-wrap">
                     <img src="SOLBG.png" alt="Solana Trading Bot" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -688,7 +786,7 @@
             </div>
 
             <!-- Project 6 -->
-            <div class="project-card" onclick="openModal('project6Modal')">
+            <div class="project-card fade-in" onclick="openModal('project6Modal')" data-category="ml">
                 <div class="project-image-wrap">
                     <img src="CCBG.jpeg" alt="Credit Card Fraud Neural Network" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -708,7 +806,7 @@
             </div>
 
             <!-- Project 7 -->
-            <div class="project-card" onclick="openModal('project7Modal')">
+            <div class="project-card fade-in" onclick="openModal('project7Modal')" data-category="ml">
                 <div class="project-image-wrap">
                     <img src="KAI.jpg" alt="Kitchen AI Assistant" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -728,7 +826,7 @@
             </div>
 
             <!-- Project 8 -->
-            <div class="project-card" onclick="openModal('project8Modal')">
+            <div class="project-card fade-in" onclick="openModal('project8Modal')" data-category="full-stack">
                 <div class="project-image-wrap">
                     <img src="sales.png" alt="Salesforce CRM Pipeline" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
@@ -1207,6 +1305,40 @@
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('open');
                 document.getElementById('hamburger').classList.remove('open');
+            });
+        });
+
+        // ── Back to top ───────────────────────────────────────────────────────
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Fade-in on scroll ─────────────────────────────────────────────────
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+        // ── Project filters ───────────────────────────────────────────────────
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card[data-category]');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const cat = btn.dataset.filter;
+                projectCards.forEach(card => {
+                    const matches = cat === 'all' || card.dataset.category.split(' ').includes(cat);
+                    card.style.display = matches ? '' : 'none';
+                });
             });
         });
     </script>
