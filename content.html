@@ -786,21 +786,21 @@
             </div>
 
             <!-- Project 6 -->
-            <div class="project-card fade-in" onclick="openModal('project6Modal')" data-category="ml">
+            <div class="project-card fade-in" onclick="openModal('project6Modal')" data-category="ml full-stack">
                 <div class="project-image-wrap">
-                    <img src="CCBG.jpeg" alt="Credit Card Fraud Neural Network" class="project-image">
+                    <img src="CCBG.jpeg" alt="Fraud Risk Monitoring Platform" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Credit Card Fraud Deep Neural Network</h3>
+                    <h3 class="project-title">Fraud Risk Monitoring Platform</h3>
                     <p class="project-description">
-                        Deep learning on extreme class-imbalance fraud data.
+                        End-to-end fraud scoring, threshold tuning, and analyst review dashboard.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">Keras</span>
-                        <span class="tag">SMOTE</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Risk Analytics</span>
                     </div>
                 </div>
             </div>
@@ -1080,47 +1080,47 @@
     <div id="project6Modal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('project6Modal')"><span class="close-x">&times;</span> Close</button>
-            <h2 class="modal-title">Credit Card Fraud Deep Neural Network</h2>
+            <h2 class="modal-title">Fraud Risk Monitoring Platform</h2>
     
             <div class="modal-gallery">
-                <img src="CCBG.jpeg" class="gallery-img" alt="Credit Card Fraud Neural Network">
+                <img src="CCBG.jpeg" class="gallery-img" alt="Fraud Risk Monitoring Platform">
             </div>
     
             <div class="modal-description">
                 <ul>
                     <li><strong>Project Intro</strong>
                         <ul>
-                            <li>Analyzes a highly imbalanced Kaggle credit card fraud dataset.</li>
-                            <li>Compares undersampling vs SMOTE-based oversampling approaches.</li>
-                            <li>Implements deep learning models using Keras and TensorFlow.</li>
+                            <li>Productized the original credit-card fraud notebook into a recruiter-ready risk platform.</li>
+                            <li>Scores transaction records with baseline rules and a machine-learning fraud model.</li>
+                            <li>Includes a Streamlit dashboard for analyst review, alert triage, and risk monitoring.</li>
                         </ul>
                     </li>
                     <li><strong>Overview / Building Process</strong>
                         <ul>
-                            <li>Quantified extreme class imbalance in fraud detection.</li>
-                            <li>Built baseline neural network classifiers.</li>
-                            <li>Applied undersampling and SMOTE-based oversampling.</li>
-                            <li>Evaluated models using precision, recall, and confusion matrices.</li>
-                            <li>Isolated sampling impacts through controlled experiments.</li>
+                            <li>Built a reusable Python package with data generation, validation, model training, scoring, rules, and monitoring modules.</li>
+                            <li>Generated Kaggle-style sample transaction data to keep the project runnable without a private dataset download.</li>
+                            <li>Trained a gradient-boosting fraud model and evaluated it with PR-AUC, ROC-AUC, recall at fixed precision, and precision@top-k.</li>
+                            <li>Added risk scores, review thresholds, alert rates, and analyst-facing explanations for flagged transactions.</li>
+                            <li>Packaged the workflow with scripts, tests, documentation, and a local Streamlit dashboard.</li>
                         </ul>
                     </li>
                     <li><strong>Outcome</strong>
                         <ul>
-                            <li>Demonstrated how sampling strategy materially impacts fraud detection performance.</li>
+                            <li>Converted a notebook-first fraud model into an end-to-end fraud-risk monitoring workflow.</li>
                         </ul>
                     </li>
                     <li><strong>Results</strong>
                         <ul>
-                            <li>Improved fraud-class recall over imbalance-unaware baselines.</li>
-                            <li>Quantified precision degradation from oversampling.</li>
-                            <li>Validated SMOTE effectiveness for minority-class amplification.</li>
-                            <li>Delivered a reproducible evaluation framework.</li>
+                            <li>Sample data profile: 5,000 transactions, 134 fraud cases, and a 2.68% fraud rate.</li>
+                            <li>Model performance: 0.9304 PR-AUC, 0.9977 ROC-AUC, and 0.9394 recall at 65% precision.</li>
+                            <li>Scoring workflow flagged 131 transactions with a 2.62% alert rate.</li>
+                            <li>Precision@100 reached 1.0000 on the generated sample data.</li>
                         </ul>
                     </li>
                 </ul>
             </div>
     
-            <a href="https://github.com/mykldggn/CreditCardNN" target="_blank" class="modal-link">View Repository</a>
+            <a href="https://github.com/mykldggn/FraudRiskPlatform" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
     
