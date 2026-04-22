@@ -685,22 +685,22 @@
                 </div>
             </div>
 
-            <!-- Project 1 -->
-            <div class="project-card fade-in" onclick="openModal('project1Modal')" data-category="ml web-scraping">
+            <!-- Project 10 -->
+            <div class="project-card fade-in" onclick="openModal('project10Modal')" data-category="full-stack ml">
                 <div class="project-image-wrap">
-                    <img src="EPLBG.png" alt="EPL Player Live Shot Chart" class="project-image">
+                    <img src="UEFAGraphics.png" alt="UEFAgraphics football analytics infographic" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">EPL Player Live Shot Chart</h3>
+                    <h3 class="project-title">UEFAgraphics</h3>
                     <p class="project-description">
-                        Live EPL shot-map visualization built from real-time web scraping.
+                        Full-stack football analytics app for European player, team, and league infographics.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
-                        <span class="tag">BeautifulSoup</span>
-                        <span class="tag">matplotlib</span>
-                        <span class="tag">Web Scraping</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">React</span>
+                        <span class="tag">xG</span>
                     </div>
                 </div>
             </div>
@@ -841,6 +841,26 @@
                         <span class="tag">Machine Learning</span>
                         <span class="tag">Polling Data</span>
                         <span class="tag">UI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card fade-in" onclick="openModal('project1Modal')" data-category="ml web-scraping">
+                <div class="project-image-wrap">
+                    <img src="EPLBG.png" alt="EPL Player Live Shot Chart" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">EPL Player Live Shot Chart</h3>
+                    <p class="project-description">
+                        Live EPL shot-map visualization built from real-time web scraping.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag">matplotlib</span>
+                        <span class="tag">Web Scraping</span>
                     </div>
                 </div>
             </div>
@@ -1280,6 +1300,56 @@
                 <a href="https://github.com/mykldggn/mlb-analytics" target="_blank" class="modal-link">View Repository</a>
                 <a href="https://mlb-analytics.vercel.app/" target="_blank" class="modal-link" style="background-color:#16a34a;">● Live Demo</a>
             </div>
+        </div>
+    </div>
+
+    <!-- ===== PROJECT 10 MODAL ===== -->
+    <div id="project10Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('project10Modal')"><span class="close-x">&times;</span> Close</button>
+            <h2 class="modal-title">UEFAgraphics</h2>
+
+            <div class="modal-gallery">
+                <img src="UEFAGraphics.png" class="gallery-img" alt="UEFAgraphics football analytics infographic">
+            </div>
+
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Overview</strong>
+                        <ul>
+                            <li>Full-stack football analytics web app for European player, team, and league infographics.</li>
+                            <li>Generates server-side PNG visuals for shot maps, radar charts, career xG, league tables, and team season cards.</li>
+                            <li>Supports Europe's top competitions with Understat and football-data.org data.</li>
+                        </ul>
+                    </li>
+                    <li><strong>How It Works</strong>
+                        <ul>
+                            <li>FastAPI backend fetches, cleans, caches, and transforms football data into visualization-ready outputs.</li>
+                            <li>matplotlib and mplsoccer render xG-weighted shot maps, player radars, timelines, tables, and leaderboards.</li>
+                            <li>React, TypeScript, Vite, Tailwind, and Recharts provide the frontend selection and display experience.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Produces reusable football graphics across players, teams, and leagues without manual chart building.</li>
+                            <li>Combines API-backed standings with advanced xG and player metrics in a single visual workflow.</li>
+                            <li>Designed for Railway backend deployment and Vercel frontend hosting.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-tags">
+                <span class="modal-tag">React</span>
+                <span class="modal-tag">TypeScript</span>
+                <span class="modal-tag">FastAPI</span>
+                <span class="modal-tag">Python</span>
+                <span class="modal-tag">matplotlib</span>
+                <span class="modal-tag">mplsoccer</span>
+                <span class="modal-tag">Understat</span>
+            </div>
+
+            <a href="https://github.com/mykldggn/UEFAgraphics" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
 
