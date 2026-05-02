@@ -726,22 +726,22 @@
                 </div>
             </div>
 
-            <!-- Project 4 -->
-            <div class="project-card fade-in" onclick="openModal('project4Modal')" data-category="ml">
+            <!-- Project 11 -->
+            <div class="project-card fade-in" onclick="openModal('project11Modal')" data-category="full-stack ml">
                 <div class="project-image-wrap">
-                    <img src="CVBG.png" alt="Soccer Computer Vision Project" class="project-image">
+                    <img src="WC26.png" alt="2026 World Cup Simulator" class="project-image">
                     <div class="project-hover-hint">View Details &rarr;</div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Soccer Computer Vision Project</h3>
+                    <h3 class="project-title">2026 World Cup Simulator</h3>
                     <p class="project-description">
-                        Spatial soccer analytics using object detection and homography.
+                        Full-stack 48-team World Cup simulator with Monte Carlo odds, group outlooks, knockout brackets, and team-level scenario analysis.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">Object Detection</span>
-                        <span class="tag">K-Means</span>
-                        <span class="tag">Voronoi</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Monte Carlo</span>
+                        <span class="tag">Sports Analytics</span>
                     </div>
                 </div>
             </div>
@@ -782,6 +782,26 @@
                         <span class="tag">Crypto</span>
                         <span class="tag">APIs</span>
                         <span class="tag">Web Scraping</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card fade-in" onclick="openModal('project4Modal')" data-category="ml">
+                <div class="project-image-wrap">
+                    <img src="CVBG.png" alt="Soccer Computer Vision Project" class="project-image">
+                    <div class="project-hover-hint">View Details &rarr;</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Soccer Computer Vision Project</h3>
+                    <p class="project-description">
+                        Spatial soccer analytics using object detection and homography.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Object Detection</span>
+                        <span class="tag">K-Means</span>
+                        <span class="tag">Voronoi</span>
                     </div>
                 </div>
             </div>
@@ -998,6 +1018,52 @@
             </div>
     
             <a href="https://github.com/mykldggn/ElectionPredictionModel" target="_blank" class="modal-link">View Repository</a>
+        </div>
+    </div>
+
+    <!-- ===== PROJECT 11 MODAL ===== -->
+    <div id="project11Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('project11Modal')"><span class="close-x">&times;</span> Close</button>
+            <h2 class="modal-title">2026 World Cup Simulator</h2>
+
+            <div class="modal-gallery">
+                <img src="WC26.png" class="gallery-img" alt="2026 World Cup Simulator">
+            </div>
+
+            <div class="modal-description">
+                <ul>
+                    <li><strong>Project Intro</strong>
+                        <ul>
+                            <li>Built a full-stack 2026 World Cup simulator around the expanded 48-team tournament format.</li>
+                            <li>Runs Monte Carlo simulations for group advancement, knockout paths, and title odds.</li>
+                            <li>Pairs a FastAPI backend with an editorial-style frontend dashboard.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Overview / Building Process</strong>
+                        <ul>
+                            <li>Modeled team strength using a hybrid rating system anchored to FIFA rankings and squad-level factors.</li>
+                            <li>Simulated 12 groups, best third-place qualification, and a full Round of 32 bracket.</li>
+                            <li>Added scenario controls, featured-team breakdowns, venue/travel context, and a sortable team matrix.</li>
+                            <li>Designed a World Cup-themed UI for champion odds, group outlooks, and sample knockout runs.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome</strong>
+                        <ul>
+                            <li>Interactive tournament simulator for comparing favorites, dark horses, and likely bracket paths.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Results</strong>
+                        <ul>
+                            <li>Produces title probabilities, expected group tables, upset signals, and team-level advancement odds.</li>
+                            <li>Surfaces different tournament environments through balanced, chalk, and chaos scenarios.</li>
+                            <li>Demonstrates end-to-end backend modeling plus frontend presentation in one sports analytics product.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="https://github.com/mykldggn/2026-world-cup-simulator" target="_blank" class="modal-link">View Repository</a>
         </div>
     </div>
     
